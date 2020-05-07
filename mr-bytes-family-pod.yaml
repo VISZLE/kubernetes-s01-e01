@@ -9,25 +9,25 @@ spec:
     cuisine: italian
   containers:
   - name: mr-bytes
-    image: busybox:1
+    image: "busybox:1"
     command:
       - sleep
       - "3600"
     imagePullPolicy: IfNotPresent
   - name: mrs-bytes
-    image: busybox:1
+    image: "busybox:1"
     command:
       - sleep
       - "3600"
     imagePullPolicy: IfNotPresent
   - name: son1-bytes
-    image: busybox:1
+    image: "busybox:1"
     command:
       - sleep
       - "3600"
     imagePullPolicy: IfNotPresent
   - name: son2-bytes
-    image: busybox:1
+    image: "busybox:1"
     command:
       - sleep
       - "3600"

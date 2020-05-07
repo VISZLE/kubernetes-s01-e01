@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: indian-travel-guide
+  labels:
+    analogy: family
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      analogy: family
+  template:
+    metadata: 
+      labels:
+        analogy: family
+    spec:
+      nodeSelector:
+        cuisine: italian
+      containers:
+        - name: father
+          image: "busybox:1"
+          command:
+            - sleep
+            - "3600"
+          imagePullPolicy: IfNotPresent
+        - name: mother
+          image: "busybox:1"
+          command:
+            - sleep
+            - "3600"
+          imagePullPolicy: IfNotPresent
+        - name: kid1
+          image: "busybox:1"
+          command:
+            - sleep
+            - "3600"
+          imagePullPolicy: IfNotPresent
+        - name: kid2
+          image: "busybox:1"
+          command:
+            - sleep
+            - "3600"
+          imagePullPolicy: IfNotPresent

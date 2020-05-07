@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: squad-lead
+  labels:
+    analogy: inspector
+spec:
+  selector:
+    matchLabels:
+      analogy: inspector
+  template:
+    metadata: 
+      labels:
+        analogy: inspector
+    spec:
+      containers:
+        - name: inspector
+          image: "busybox:1"
+          command:
+            - sleep
+            - "3600"
+          imagePullPolicy: IfNotPresent
