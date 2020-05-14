@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-support-l1
+  labels:
+    Agent: L1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        Agent: L1
+  template:
+    metadata: 
+      labels:
+        Agent: L1
+    spec:
+      nodeSelector:
+        room: L1
+      containers:
+        - name: agent
+          image: "strm/helloworld-http"
+          imagePullPolicy: IfNotPresent
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-support-l2
+  labels:
+    Agent: L2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        Agent: L2
+  template:
+    metadata: 
+      labels:
+        Agent: L2
+    spec:
+      nodeSelector:
+        room: L2
+      containers:
+        - name: agent
+          image: "strm/helloworld-http"
+          imagePullPolicy: IfNotPresent
+
+

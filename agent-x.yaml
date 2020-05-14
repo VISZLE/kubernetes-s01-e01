@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    Agent: x
+  name: agent-x
+spec:
+  containers:
+  - name: agent-x
+    image: "yauritux/busybox-curl"
+    command:
+      - sleep
+      - "3600"
+    imagePullPolicy: IfNotPresent

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: call-center-l2-telephone
+    labels:
+      Agent: L2
+spec:
+    type: ClusterIP
+    ports:
+      - targetPort: 80
+        port: 2000
+    selector:
+      Agent: L2

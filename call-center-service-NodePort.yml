@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: call-center-tollfree-telephone
+    labels:
+      Agent: L1
+spec:
+    type: NodePort
+    ports:
+      - port: 2000
+        targetPort: 80
+        #should be in range (default: 30000-32767)
+        nodePort: 32000  
+    selector:
+      Agent: L1
